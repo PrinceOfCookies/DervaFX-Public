@@ -4,7 +4,6 @@
 
 [![Java CI with Maven](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven.yml/badge.svg)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven.yml)
 
-DervaFX is a GMod Derma type wrapper of JavaFX
 
 Current scope:
 
