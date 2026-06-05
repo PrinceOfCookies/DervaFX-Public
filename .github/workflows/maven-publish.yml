@@ -19,19 +19,18 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: "21"
-          distribution: "temurin"
           server-id: github
           settings-path: ${{ github.workspace }}
           cache: maven
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
 
       - name: Read project version
         id: version
         run: |
           VERSION="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version)"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
 
       - name: Publish to GitHub Packages
         id: package
