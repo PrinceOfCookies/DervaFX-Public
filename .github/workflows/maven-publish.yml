@@ -19,6 +19,8 @@ jobs:
         with:
           java-version: "21"
           distribution: "temurin"
+          server-id: github
+          settings-path: ${{ github.workspace }}
           cache: maven
 
       - name: Read project version
@@ -42,6 +44,12 @@ jobs:
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+
+      - name: Publish to GitHub Packages
+        if: steps.release.outputs.exists != 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: mvn -B deploy -s "$GITHUB_WORKSPACE/settings.xml" -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }}
 
       - name: Create GitHub release
         if: steps.release.outputs.exists != 'true'
