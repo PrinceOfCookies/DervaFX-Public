@@ -40,11 +40,11 @@ jobs:
         run: |
           VERSION="${{ steps.version.outputs.version }}"
           set +e
-          mvn -B deploy -s "$GITHUB_WORKSPACE/settings.xml" -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }} 2>&1 | tee /tmp/maven-deploy.log
+          mvn -B deploy -s "$GITHUB_WORKSPACE/settings.xml" -DaltDeploymentRepository=github::https://maven.pkg.github.com/${{ github.repository }} 2>&1 | tee /tmp/maven-deploy.log
           STATUS="${PIPESTATUS[0]}"
           set -e
           if [ "$STATUS" -ne 0 ]; then
-            if rg -q "status code: 422|Unprocessable Entity" /tmp/maven-deploy.log; then
+            if grep -Eq "status code: 422|Unprocessable Entity" /tmp/maven-deploy.log; then
               echo "::notice::Still on the same version: v$VERSION"
               echo "published=false" >> "$GITHUB_OUTPUT"
               exit 0
