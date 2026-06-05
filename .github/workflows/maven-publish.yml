@@ -28,7 +28,25 @@ jobs:
         id: version
         run: |
           VERSION="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version)"
+          PACKAGE_NAME="$(mvn -q -DforceStdout help:evaluate -Dexpression=project.artifactId)"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "package_name=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Check existing package version
+        id: package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          PACKAGE_NAME="${{ steps.version.outputs.package_name }}"
+          if gh api "/user/packages/maven/$PACKAGE_NAME/versions" >/tmp/package_versions.json 2>/dev/null; then
+            if jq -e --arg version "$VERSION" '.[] | select(.name == $version)' /tmp/package_versions.json >/dev/null; then
+              echo "::notice::Still on the same version: v$VERSION"
+              echo "exists=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          echo "exists=false" >> "$GITHUB_OUTPUT"
 
       - name: Check existing release
         id: release
@@ -47,13 +65,13 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Publish to GitHub Packages
-        if: steps.release.outputs.exists != 'true'
+        if: steps.package.outputs.exists != 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: mvn -B deploy -s "$GITHUB_WORKSPACE/settings.xml" -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }}
 
       - name: Create GitHub release
-        if: steps.release.outputs.exists != 'true'
+        if: steps.package.outputs.exists != 'true' && steps.release.outputs.exists != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
