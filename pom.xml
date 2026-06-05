@@ -5,16 +5,18 @@
 
     <groupId>com.princeofcookies</groupId>
     <artifactId>dervafx-pub</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>DervaFX</name>
     <description>DervaFX is a GMod Derma inspired JavaFX wrapper</description>
     <packaging>jar</packaging>
 
-    <repositories>
+    <distributionManagement>
         <repository>
-            <id></id>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/PrinceOfCookies/DervaFX-Public</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
