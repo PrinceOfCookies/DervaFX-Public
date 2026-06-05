@@ -63,4 +63,4 @@ jobs:
             echo "::notice::Still on the same version: v$VERSION"
             exit 0
           fi
-          gh release create "v$VERSION" "target/dervafx-$VERSION.jar" --title "v$VERSION" --generate-notes
+          gh release create "v$VERSION" "target/dervafx-pub-$VERSION.jar" --title "v$VERSION" --generate-notes
