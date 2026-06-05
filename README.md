@@ -1,6 +1,7 @@
 # DervaFX
 
 [![DervaFX Package Builder](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml/badge.svg?event=release)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml)
+
 [![Java CI with Maven](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven.yml/badge.svg)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven.yml)
 
 DervaFX is a GMod Derma type wrapper of JavaFX
@@ -38,7 +39,7 @@ DervaWindow window = DervaFX.window("Base Window")
 window.add(
     DervaFX.vbox()
         .spacing(8)
-        .add(DervaFX.label("Barebones starter"))
+        .add(DervaFX.label("WOOOOOOOOOOOOOOO"))
         .add(DervaFX.button("Click me"))
 );
 

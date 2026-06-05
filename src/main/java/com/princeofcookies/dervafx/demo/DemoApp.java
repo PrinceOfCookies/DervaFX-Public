@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public final class BarebonesDemoApp extends Application {
+public final class DemoApp extends Application {
     @Override
     public void start(Stage stage) {
         AnchorPane host = new AnchorPane();

@@ -7,7 +7,7 @@
     <artifactId>dervafx</artifactId>
     <version>0.0.1</version>
     <name>DervaFX</name>
-    <description>Barebones JavaFX starter for rebuilding DervaFX</description>
+    <description>DervaFX is a GMod Derma inspired JavaFX wrapper</description>
     <packaging>jar</packaging>
 
     <properties>
