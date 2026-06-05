@@ -1,5 +1,7 @@
 # DervaFX
 
+[![DervaFX Package Builder](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml/badge.svg?event=release)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml)
+
 DervaFX is a GMod Derma type wrapper of JavaFX
 
 Current scope:
