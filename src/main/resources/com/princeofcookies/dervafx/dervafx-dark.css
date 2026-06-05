@@ -1,0 +1,68 @@
+.dervafx-root {
+    -fx-background-color: linear-gradient(to bottom, #151821, #0f1218);
+}
+
+.dervafx-panel,
+.dervafx-vbox,
+.dervafx-hbox {
+    -fx-background-color: transparent;
+}
+
+.dervafx-window {
+    -fx-background-color: rgba(30, 34, 44, 0.98);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.32), 18, 0.15, 0, 6);
+}
+
+.dervafx-window-titlebar {
+    -fx-background-color: linear-gradient(to bottom, #343949, #282d39);
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+    -fx-border-width: 0 0 1 0;
+}
+
+.dervafx-window-title {
+    -fx-text-fill: #f1f5f9;
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+}
+
+.dervafx-window-content {
+    -fx-background-color: transparent;
+}
+
+.dervafx-window-close {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-text-fill: #e2e8f0;
+    -fx-background-radius: 8;
+    -fx-padding: 3 10 3 10;
+}
+
+.dervafx-window-close:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.35);
+}
+
+.dervafx-button {
+    -fx-background-color: linear-gradient(to bottom, #3a4252, #2c3443);
+    -fx-text-fill: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 10;
+    -fx-padding: 8 14 8 14;
+    -fx-font-weight: 600;
+}
+
+.dervafx-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #465063, #343d50);
+}
+
+.dervafx-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #252c38, #202632);
+}
+
+.dervafx-label {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+}
