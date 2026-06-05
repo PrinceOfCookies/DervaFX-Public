@@ -2,6 +2,7 @@
 
 [![DervaFX Package Builder](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml)
 
+Documentation lives in the [GitHub Wiki](https://github.com/PrinceOfCookies/DervaFX-Public/wiki).
 
 Current scope:
 
@@ -36,7 +37,7 @@ DervaWindow window = DervaFX.window("Base Window")
 window.add(
     DervaFX.vbox()
         .spacing(8)
-        .add(DervaFX.label("WOOOOOOOOOOOOOOO"))
+        .add(DervaFX.label("DervaFX demo"))
         .add(DervaFX.button("Click me"))
 );
 
