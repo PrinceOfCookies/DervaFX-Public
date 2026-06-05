@@ -1,6 +1,6 @@
 # DervaFX
 
-DervaFX is reset to a barebones JavaFX starter.
+DervaFX is a GMod Derma type wrapper of JavaFX
 
 Current scope:
 
@@ -41,5 +41,3 @@ window.add(
 
 root.add(window);
 ```
-
-This is the new reset point for rebuilding the library cleanly.
