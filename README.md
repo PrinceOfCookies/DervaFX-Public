@@ -8,6 +8,7 @@ Current scope:
 
 - Small chainable wrapper base
 - Basic containers and controls
+- Basic text, toggle, and select inputs
 - One simple theme manager
 - One minimal demo app
 
@@ -25,6 +26,10 @@ mvn clean package
 mvn javafx:run
 ```
 
+## Demo
+
+![DervaFX demo](assets/Demo.png)
+
 ## Current surface
 
 ```java
@@ -38,6 +43,8 @@ window.add(
     DervaFX.vbox()
         .spacing(8)
         .add(DervaFX.label("DervaFX demo"))
+        .add(DervaFX.textField().prompt("Project name"))
+        .add(DervaFX.checkBox("Remember layout"))
         .add(DervaFX.button("Click me"))
 );
 

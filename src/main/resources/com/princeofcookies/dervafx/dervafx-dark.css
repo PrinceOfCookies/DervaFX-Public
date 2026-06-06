@@ -66,3 +66,36 @@
     -fx-text-fill: #cbd5e1;
     -fx-font-size: 13px;
 }
+
+.dervafx-text-field,
+.dervafx-text-area,
+.dervafx-combo-box {
+    -fx-background-color: rgba(24, 28, 36, 0.95);
+    -fx-text-fill: #000000;
+    -fx-prompt-text-fill: #7c8799;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 10;
+    -fx-padding: 8 10 8 10;
+}
+
+.dervafx-text-field:focused,
+.dervafx-text-area:focused,
+.dervafx-combo-box:focused {
+    -fx-border-color: rgba(125, 211, 252, 0.55);
+}
+
+.dervafx-check-box {
+    -fx-text-fill: #d7deea;
+}
+
+.dervafx-check-box .box {
+    -fx-background-color: rgba(24, 28, 36, 0.95);
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.dervafx-check-box:selected .mark {
+    -fx-background-color: #7dd3fc;
+}

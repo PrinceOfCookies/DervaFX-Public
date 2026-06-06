@@ -34,6 +34,22 @@ public final class DervaFX {
         return new DervaButton(text);
     }
 
+    public static DervaTextField textField() {
+        return new DervaTextField();
+    }
+
+    public static DervaTextArea textArea() {
+        return new DervaTextArea();
+    }
+
+    public static DervaCheckBox checkBox(String text) {
+        return new DervaCheckBox(text);
+    }
+
+    public static DervaComboBox comboBox() {
+        return new DervaComboBox();
+    }
+
     public static DervaTheme theme() {
         return DervaThemeManager.theme();
     }

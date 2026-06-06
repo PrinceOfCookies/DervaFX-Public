@@ -28,11 +28,19 @@ public final class DemoApp extends Application {
                 .padding(new Insets(12))
                 .spacing(10)
                 .add(DervaFX.label("DervaFX demo"))
+                .add(DervaFX.textField().prompt("Project name"))
+                .add(DervaFX.comboBox()
+                        .prompt("Theme")
+                        .item("Dark")
+                        .item("Light")
+                        .value("Dark"))
+                .add(DervaFX.checkBox("Remember layout").selected(true))
+                .add(DervaFX.textArea().prompt("Notes").size(0, 92))
                 .add(DervaFX.button("Test Button").onClick(() -> System.out.println("Clicked test button")));
 
         DervaVBox stack = DervaFX.vbox()
                 .spacing(8)
-                .add(DervaFX.label("Small chainable wrapper base"))
+                .add(DervaFX.label("Small chainable wrapper base with basic inputs"))
                 .add(panel);
 
         DervaWindow window = DervaFX.window("Base Window")
