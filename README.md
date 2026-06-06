@@ -2,7 +2,7 @@
 
 [![DervaFX Package Builder](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/PrinceOfCookies/DervaFX-Public/actions/workflows/maven-publish.yml)
 
-Documentation lives in the [GitHub Wiki](https://github.com/PrinceOfCookies/DervaFX-Public/wiki).
+Documentation lives in the [My Webiste](https://PrinceOfCookies.com/DervaFX).
 
 Current scope:
 
