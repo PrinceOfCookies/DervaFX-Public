@@ -8,6 +8,7 @@ Current scope:
 
 - Small chainable wrapper base
 - Basic containers and controls
+- Basic grid layout support
 - Basic text, toggle, and select inputs
 - One simple theme manager
 - One minimal demo app
@@ -40,12 +41,13 @@ DervaWindow window = DervaFX.window("Base Window")
     .position(24, 24);
 
 window.add(
-    DervaFX.vbox()
-        .spacing(8)
-        .add(DervaFX.label("DervaFX demo"))
-        .add(DervaFX.textField().prompt("Project name"))
-        .add(DervaFX.checkBox("Remember layout"))
-        .add(DervaFX.button("Click me"))
+    DervaFX.grid()
+        .hgap(8)
+        .vgap(8)
+        .add(DervaFX.label("Project"), 0, 0)
+        .add(DervaFX.textField().prompt("Project name"), 1, 0)
+        .add(DervaFX.checkBox("Remember layout"), 0, 1, 2, 1)
+        .add(DervaFX.button("Click me"), 1, 2)
 );
 
 root.add(window);

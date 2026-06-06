@@ -22,6 +22,10 @@ public final class DervaFX {
         return new DervaHBox();
     }
 
+    public static DervaGrid grid() {
+        return new DervaGrid();
+    }
+
     public static DervaWindow window(String title) {
         return new DervaWindow(title);
     }
