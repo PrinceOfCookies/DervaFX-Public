@@ -5,7 +5,7 @@
 
     <groupId>com.princeofcookies</groupId>
     <artifactId>dervafx-pub</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>DervaFX</name>
     <description>DervaFX is a GMod Derma inspired JavaFX wrapper</description>
     <packaging>jar</packaging>
