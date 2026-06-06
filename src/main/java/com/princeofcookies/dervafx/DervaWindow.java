@@ -2,6 +2,7 @@ package com.princeofcookies.dervafx;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -46,9 +47,6 @@ public class DervaWindow extends DervaElement<DervaWindow> {
 
         closeButton.getStyleClass().add("dervafx-window-close");
         closeButton.setFocusTraversable(false);
-        closeButton.addEventFilter(MouseEvent.MOUSE_PRESSED, MouseEvent::consume);
-        closeButton.addEventFilter(MouseEvent.MOUSE_DRAGGED, MouseEvent::consume);
-        closeButton.addEventFilter(MouseEvent.MOUSE_RELEASED, MouseEvent::consume);
         closeButton.setOnAction(event -> visible(false));
 
         titleBar.getChildren().addAll(titleLabel, spacer, closeButton);
@@ -127,7 +125,7 @@ public class DervaWindow extends DervaElement<DervaWindow> {
 
     private void installDragHandlers() {
         titleBar.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
-            if (!draggable) {
+            if (!draggable || isCloseButtonEvent(event)) {
                 return;
             }
             dragOffsetX = event.getSceneX() - rootNode().getLayoutX();
@@ -136,7 +134,7 @@ public class DervaWindow extends DervaElement<DervaWindow> {
         });
 
         titleBar.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
-            if (!draggable) {
+            if (!draggable || isCloseButtonEvent(event)) {
                 return;
             }
             rootNode().setLayoutX(event.getSceneX() - dragOffsetX);
@@ -145,9 +143,20 @@ public class DervaWindow extends DervaElement<DervaWindow> {
         });
 
         titleBar.addEventHandler(MouseEvent.MOUSE_RELEASED, event -> {
-            if (draggable) {
+            if (draggable && !isCloseButtonEvent(event)) {
                 event.consume();
             }
         });
+    }
+
+    private boolean isCloseButtonEvent(MouseEvent event) {
+        Node target = event.getPickResult() == null ? null : event.getPickResult().getIntersectedNode();
+        while (target != null) {
+            if (target == closeButton) {
+                return true;
+            }
+            target = target.getParent();
+        }
+        return false;
     }
 }
