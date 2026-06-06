@@ -1,0 +1,49 @@
+.dervafx-root {
+    -fx-background-color: linear-gradient(to bottom, #f6e7cd, #ecd2a8);
+}
+
+.dervafx-panel,
+.dervafx-vbox,
+.dervafx-hbox,
+.dervafx-grid {
+    -fx-background-color: transparent;
+}
+
+.dervafx-window {
+    -fx-background-color: rgba(248, 237, 216, 0.98);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(71, 56, 35, 0.18);
+    -fx-border-radius: 12;
+}
+
+.dervafx-window-titlebar {
+    -fx-background-color: linear-gradient(to bottom, #d9b97e, #c99f5f);
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: rgba(71, 56, 35, 0.18);
+    -fx-border-width: 0 0 1 0;
+}
+
+.dervafx-window-title,
+.dervafx-label,
+.dervafx-check-box {
+    -fx-text-fill: #3e2e1d;
+}
+
+.dervafx-button {
+    -fx-background-color: linear-gradient(to bottom, #f0d7ab, #e1bd84);
+    -fx-text-fill: #3e2e1d;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(71, 56, 35, 0.14);
+    -fx-border-radius: 10;
+}
+
+.dervafx-text-field,
+.dervafx-text-area,
+.dervafx-combo-box {
+    -fx-background-color: rgba(255, 250, 239, 0.98);
+    -fx-text-fill: #2c2116;
+    -fx-prompt-text-fill: #7a6145;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(71, 56, 35, 0.12);
+    -fx-border-radius: 10;
+}

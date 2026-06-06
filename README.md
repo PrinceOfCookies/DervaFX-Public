@@ -11,7 +11,7 @@ Current scope:
 - Basic grid layout support
 - Basic text, toggle, and select inputs
 - One simple theme manager
-- One minimal demo app
+- One demo menu with per-component showcase windows
 
 ## Build
 
@@ -26,6 +26,9 @@ mvn clean package
 ```bash
 mvn javafx:run
 ```
+
+The demo app is a launcher/menu that opens separate showcase windows for the
+current DervaFX surfaces instead of one giant all-in-one sample.
 
 ## Demo
 

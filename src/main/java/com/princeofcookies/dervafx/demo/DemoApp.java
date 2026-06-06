@@ -1,19 +1,25 @@
 package com.princeofcookies.dervafx.demo;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.princeofcookies.dervafx.DervaFX;
 import com.princeofcookies.dervafx.DervaGrid;
-import com.princeofcookies.dervafx.DervaPanel;
 import com.princeofcookies.dervafx.DervaRoot;
 import com.princeofcookies.dervafx.DervaVBox;
 import com.princeofcookies.dervafx.DervaWindow;
 
-import javafx.geometry.Insets;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public final class DemoApp extends Application {
+    private static final double HUB_X = 24.0;
+    private static final double HUB_Y = 24.0;
+
     @Override
     public void start(Stage stage) {
         AnchorPane host = new AnchorPane();
@@ -25,50 +31,83 @@ public final class DemoApp extends Application {
         AnchorPane.setBottomAnchor(root.getNode(), 0.0);
         AnchorPane.setLeftAnchor(root.getNode(), 0.0);
 
-        DervaGrid settingsGrid = DervaFX.grid()
-                .hgap(10)
-                .vgap(10)
-                .debugGrid(true)
-                .add(DervaFX.label("Project"), 0, 0)
-                .add(DervaFX.textField().prompt("Project name").fillWidth(), 1, 0)
-                .add(DervaFX.label("Theme"), 0, 1)
-                .add(DervaFX.comboBox()
-                        .prompt("Theme")
-                        .item("Dark")
-                        .item("Light")
-                        .value("Dark")
-                        .fillWidth(), 1, 1)
-                .add(DervaFX.label("Profile"), 0, 2)
-                .add(DervaFX.textField().prompt("Default workspace").fillWidth(), 1, 2)
-                .add(DervaFX.checkBox("Remember layout").selected(true), 0, 3, 2, 1)
-                .add(DervaFX.label("Notes"), 0, 4)
-                .add(DervaFX.textArea().prompt("Notes").size(0, 92).fillWidth(), 1, 4)
-                .add(DervaFX.button("Apply"), 0, 5)
-                .add(DervaFX.button("Preview").fillWidth(), 1, 5);
-
-        DervaPanel panel = DervaFX.panel()
-                .padding(new Insets(12))
-                .spacing(10)
-                .add(DervaFX.label("DervaFX grid demo"))
-                .add(settingsGrid)
-                .add(DervaFX.button("Test Button").onClick(() -> System.out.println("Clicked test button")));
-
-        DervaVBox stack = DervaFX.vbox()
-                .spacing(8)
-                .add(DervaFX.label("Small chainable wrapper base with basic inputs and grid layout"))
-                .add(panel);
-
-        DervaWindow window = DervaFX.window("Base Window")
-                .position(24, 24)
-                .size(520, 360)
-                .add(stack);
-
-        root.add(window);
-
-        Scene scene = new Scene(host, 900, 600);
+        Scene scene = new Scene(host, 1480, 900);
         DervaFX.applyTheme(scene);
 
-        stage.setTitle("DervaFX Demo");
+        List<DemoSpec> specs = List.of(
+                RootDemo.spec(),
+                WindowDemo.spec(),
+                PanelDemo.spec(),
+                VBoxDemo.spec(),
+                HBoxDemo.spec(),
+                GridDemo.spec(),
+                LabelDemo.spec(),
+                ButtonDemo.spec(),
+                TextFieldDemo.spec(),
+                TextAreaDemo.spec(),
+                CheckBoxDemo.spec(),
+                ComboBoxDemo.spec(),
+                ThemeDemo.spec(),
+                ThemeManagerDemo.spec());
+
+        Map<DemoSpec, DervaWindow> windows = new LinkedHashMap<>();
+        for (DemoSpec spec : specs) {
+            DervaWindow window = spec.create(root, scene).visible(false);
+            root.add(window);
+            windows.put(spec, window);
+        }
+
+        Runnable hideAll = () -> windows.values().forEach(window -> window.visible(false));
+        Runnable resetAll = () -> windows.forEach(DemoSpec::reset);
+        Runnable openAll = () -> {
+            windows.forEach((spec, window) -> {
+                spec.reset(window);
+                window.visible(true).toFront();
+            });
+        };
+
+        DervaGrid menuGrid = DervaFX.grid()
+                .hgap(10)
+                .vgap(8)
+                .padding(4)
+                .fillWidth();
+
+        int row = 0;
+        for (DemoSpec spec : specs) {
+            DervaWindow target = windows.get(spec);
+            menuGrid.add(DervaFX.button("Open " + spec.title()).onClick(() -> target.visible(true).toFront()), 0, row);
+            menuGrid.add(DervaFX.label(spec.fileName()), 1, row);
+            row++;
+        }
+
+        DervaVBox hubContent = DervaFX.vbox()
+                .spacing(10)
+                .padding(4)
+                .fillWidth()
+                .fillHeight()
+                .add(DervaFX.label("Demo menu"))
+                .add(DervaFX.label("Each DervaFX surface has its own demo source file."))
+                .add(menuGrid)
+                .add(DervaFX.button("Open Every Demo").onClick(openAll))
+                .add(DervaFX.button("Hide Every Demo").onClick(hideAll))
+                .add(DervaFX.button("Reset Demo Layout").onClick(resetAll))
+                .add(DervaFX.panel()
+                        .padding(new Insets(10))
+                        .spacing(8)
+                        .fillWidth()
+                        .add(DervaFX.label("Theme note"))
+                        .add(DervaFX.label("ThemeManagerDemo can swap the entire app theme live.")));
+
+        DervaWindow hubWindow = DervaFX.window("DervaFX Demo Menu")
+                .position(HUB_X, HUB_Y)
+                .size(280, 720)
+                .minSize(240, 320)
+                .resizable(false, true)
+                .add(hubContent);
+
+        root.add(hubWindow);
+
+        stage.setTitle("DervaFX Demo Menu");
         stage.setScene(scene);
         stage.show();
     }
