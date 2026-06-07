@@ -7,10 +7,10 @@ Documentation lives in the [My Webiste](https://PrinceOfCookies.com/DervaFX).
 Current scope:
 
 - Small chainable wrapper base
-- Basic containers and controls
-- Basic grid layout support
+- Basic containers, controls, and property-sheet tabs
+- Basic grid and dock layout support
 - Basic text, toggle, and select inputs
-- One simple theme manager
+- Dark, Derma, and custom theme descriptors
 - One demo menu with per-component showcase windows
 
 ## Build
@@ -28,7 +28,8 @@ mvn javafx:run
 ```
 
 The demo app is a launcher/menu that opens separate showcase windows for the
-current DervaFX surfaces instead of one giant all-in-one sample.
+current DervaFX surfaces instead of one giant all-in-one sample. It now boots
+into the Derma-oriented theme so the API direction is easier to judge.
 
 ## Demo
 

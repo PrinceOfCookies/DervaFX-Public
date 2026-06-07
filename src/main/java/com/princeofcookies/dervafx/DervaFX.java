@@ -26,6 +26,14 @@ public final class DervaFX {
         return new DervaGrid();
     }
 
+    public static DervaDock dock() {
+        return new DervaDock();
+    }
+
+    public static DervaPropertySheet propertySheet() {
+        return new DervaPropertySheet();
+    }
+
     public static DervaWindow window(String title) {
         return new DervaWindow(title);
     }

@@ -15,6 +15,8 @@ import javafx.scene.layout.VBox;
 public abstract class DervaElement<T extends DervaElement<T>> {
     private final StackPane root;
     private final Node contentNode;
+    private DervaDockMode dockMode = DervaDockMode.NONE;
+    private Insets dockMargin = Insets.EMPTY;
 
     protected DervaElement(Node contentNode) {
         this.contentNode = Objects.requireNonNull(contentNode, "contentNode");
@@ -40,12 +42,20 @@ public abstract class DervaElement<T extends DervaElement<T>> {
         return self();
     }
 
+    public T setPos(double x, double y) {
+        return position(x, y);
+    }
+
     public T size(double width, double height) {
         root.setPrefSize(width, height);
         if (contentNode instanceof Region region) {
             region.setPrefSize(width, height);
         }
         return self();
+    }
+
+    public T setSize(double width, double height) {
+        return size(width, height);
     }
 
     public T minSize(double width, double height) {
@@ -132,9 +142,59 @@ public abstract class DervaElement<T extends DervaElement<T>> {
         return self();
     }
 
+    public T setVisible(boolean value) {
+        return visible(value);
+    }
+
     public T enabled(boolean value) {
         root.setDisable(!value);
         return self();
+    }
+
+    public T setEnabled(boolean value) {
+        return enabled(value);
+    }
+
+    public T dock(DervaDockMode mode) {
+        this.dockMode = mode == null ? DervaDockMode.NONE : mode;
+        return self();
+    }
+
+    public T dockNone() {
+        return dock(DervaDockMode.NONE);
+    }
+
+    public T dockTop() {
+        return dock(DervaDockMode.TOP);
+    }
+
+    public T dockBottom() {
+        return dock(DervaDockMode.BOTTOM);
+    }
+
+    public T dockLeft() {
+        return dock(DervaDockMode.LEFT);
+    }
+
+    public T dockRight() {
+        return dock(DervaDockMode.RIGHT);
+    }
+
+    public T dockFill() {
+        return dock(DervaDockMode.FILL);
+    }
+
+    public T dockMargin(double left, double top, double right, double bottom) {
+        this.dockMargin = new Insets(top, right, bottom, left);
+        return self();
+    }
+
+    final DervaDockMode dockMode() {
+        return dockMode;
+    }
+
+    final Insets dockMargin() {
+        return dockMargin;
     }
 
     public T cssClass(String className) {

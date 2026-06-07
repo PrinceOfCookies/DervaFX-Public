@@ -16,6 +16,7 @@ final class ThemeDemo {
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
         DervaTheme dark = DervaTheme.dark();
+        DervaTheme derma = DervaTheme.derma();
         DervaTheme sand = DervaTheme.of("sand").stylesheetResource("/com/princeofcookies/dervafx/dervafx-sand.css");
         DervaLabel status = DervaFX.label("Theme objects are plain descriptors.");
 
@@ -27,6 +28,8 @@ final class ThemeDemo {
                 .add(DervaFX.label("DervaTheme builds theme descriptors."))
                 .add(DervaFX.button("Inspect Dark Theme").onClick(() ->
                         status.text(dark.name() + " -> " + dark.stylesheetResource())))
+                .add(DervaFX.button("Inspect Derma Theme").onClick(() ->
+                        status.text(derma.name() + " -> " + derma.stylesheetResource())))
                 .add(DervaFX.button("Inspect Sand Theme").onClick(() ->
                         status.text(sand.name() + " -> " + sand.stylesheetResource())))
                 .add(status);

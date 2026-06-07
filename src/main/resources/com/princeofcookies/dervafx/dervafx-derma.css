@@ -1,0 +1,129 @@
+.dervafx-root {
+    -fx-background-color: linear-gradient(to bottom, #4f5964, #353c44);
+}
+
+.dervafx-panel,
+.dervafx-vbox,
+.dervafx-hbox,
+.dervafx-grid,
+.dervafx-dock {
+    -fx-background-color: transparent;
+}
+
+.dervafx-window {
+    -fx-background-color: #c7ccd1;
+    -fx-border-color: #11161c;
+    -fx-border-width: 1;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-effect: none;
+}
+
+.dervafx-window-titlebar {
+    -fx-background-color: linear-gradient(to bottom, #55616e, #424b56);
+    -fx-background-radius: 0;
+    -fx-border-color: #11161c;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 8 5 8;
+}
+
+.dervafx-window-title {
+    -fx-text-fill: #f0f4f8;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.dervafx-window-content {
+    -fx-background-color: #c7ccd1;
+}
+
+.dervafx-window-close {
+    -fx-background-color: linear-gradient(to bottom, #d66a63, #a84540);
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 0;
+    -fx-border-color: #11161c;
+    -fx-border-width: 1;
+    -fx-padding: 1 8 1 8;
+    -fx-font-weight: 700;
+}
+
+.dervafx-button {
+    -fx-background-color: linear-gradient(to bottom, #e4e8ec, #bcc4cb);
+    -fx-text-fill: #13181d;
+    -fx-background-radius: 0;
+    -fx-border-color: #20252b;
+    -fx-border-width: 1;
+    -fx-border-radius: 0;
+    -fx-padding: 5 10 5 10;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.dervafx-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #edf0f3, #c9d1d8);
+}
+
+.dervafx-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #b7bfc7, #d7dde2);
+}
+
+.dervafx-label {
+    -fx-text-fill: #151a1f;
+    -fx-font-size: 12px;
+}
+
+.dervafx-text-field,
+.dervafx-text-area,
+.dervafx-combo-box {
+    -fx-background-color: #f4f5f7;
+    -fx-text-fill: #11161c;
+    -fx-prompt-text-fill: #66717c;
+    -fx-background-radius: 0;
+    -fx-border-color: #20252b;
+    -fx-border-width: 1;
+    -fx-border-radius: 0;
+    -fx-padding: 4 6 4 6;
+}
+
+.dervafx-check-box {
+    -fx-text-fill: #151a1f;
+}
+
+.dervafx-check-box .box {
+    -fx-background-color: #edf0f3;
+    -fx-border-color: #20252b;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.dervafx-check-box:selected .mark {
+    -fx-background-color: #2f74b8;
+}
+
+.dervafx-property-sheet .tab-header-area {
+    -fx-padding: 0;
+}
+
+.dervafx-property-sheet .tab {
+    -fx-background-color: linear-gradient(to bottom, #d9dde1, #b9c0c7);
+    -fx-background-radius: 0;
+    -fx-border-color: #20252b;
+    -fx-border-width: 1 1 0 1;
+    -fx-padding: 4 10 4 10;
+}
+
+.dervafx-property-sheet .tab:selected {
+    -fx-background-color: #c7ccd1;
+}
+
+.dervafx-property-sheet .tab-label {
+    -fx-text-fill: #11161c;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.dervafx-property-sheet .tab-content-area {
+    -fx-background-color: #c7ccd1;
+    -fx-border-color: #20252b;
+    -fx-border-width: 1;
+}

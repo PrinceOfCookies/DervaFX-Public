@@ -19,6 +19,10 @@ public final class DervaTheme {
         return of("dark");
     }
 
+    public static DervaTheme derma() {
+        return of("derma").stylesheetResource("/com/princeofcookies/dervafx/dervafx-derma.css");
+    }
+
     public String name() {
         return name;
     }

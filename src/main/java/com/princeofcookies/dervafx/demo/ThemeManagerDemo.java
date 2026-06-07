@@ -16,6 +16,7 @@ final class ThemeManagerDemo {
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
         DervaTheme dark = DervaTheme.dark();
+        DervaTheme derma = DervaTheme.derma();
         DervaTheme sand = DervaTheme.of("sand").stylesheetResource("/com/princeofcookies/dervafx/dervafx-sand.css");
         DervaLabel status = DervaFX.label("Current theme: " + DervaFX.theme().name());
 
@@ -27,6 +28,10 @@ final class ThemeManagerDemo {
                 .add(DervaFX.label("DervaThemeManager tracks and reapplies the active scene theme."))
                 .add(DervaFX.button("Apply Dark").onClick(() -> {
                     DervaFX.setTheme(dark);
+                    status.text("Current theme: " + DervaFX.theme().name());
+                }))
+                .add(DervaFX.button("Apply Derma").onClick(() -> {
+                    DervaFX.setTheme(derma);
                     status.text("Current theme: " + DervaFX.theme().name());
                 }))
                 .add(DervaFX.button("Apply Sand").onClick(() -> {
