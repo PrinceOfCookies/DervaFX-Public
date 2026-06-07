@@ -57,6 +57,7 @@ public final class DemoApp extends Application {
                 CheckBoxDemo.spec(),
                 ComboBoxDemo.spec(),
                 PropertySheetDemo.spec(),
+                ScrollPanelDemo.spec(),
                 ThemeDemo.spec(),
                 ThemeManagerDemo.spec());
 

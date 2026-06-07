@@ -34,6 +34,10 @@ public final class DervaFX {
         return new DervaPropertySheet();
     }
 
+    public static DervaScrollPanel scrollPanel() {
+        return new DervaScrollPanel();
+    }
+
     public static DervaWindow window(String title) {
         return new DervaWindow(title);
     }

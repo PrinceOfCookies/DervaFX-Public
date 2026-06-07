@@ -7,7 +7,7 @@ Documentation lives in the [My Webiste](https://PrinceOfCookies.com/DervaFX).
 Current scope:
 
 - Small chainable wrapper base
-- Basic containers, controls, and property-sheet tabs
+- Basic containers, controls, property-sheet tabs, and scroll panels
 - Basic grid and dock layout support
 - Basic text, toggle, and select inputs
 - Dark, Derma, and custom theme descriptors

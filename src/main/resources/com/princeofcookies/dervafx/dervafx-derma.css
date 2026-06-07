@@ -127,3 +127,19 @@
     -fx-border-color: #20252b;
     -fx-border-width: 1;
 }
+
+.dervafx-scroll-panel {
+    -fx-background-color: #c7ccd1;
+    -fx-border-color: #20252b;
+    -fx-border-width: 1;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.dervafx-scroll-panel > .viewport {
+    -fx-background-color: #c7ccd1;
+}
+
+.dervafx-scroll-panel-content {
+    -fx-background-color: transparent;
+}
