@@ -10,7 +10,7 @@ final class TextFieldDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaTextField", "TextFieldDemo.java", 960, 560, 320, 220, TextFieldDemo::createWindow);
+        return new DemoSpec("DervaTextField", "TextFieldDemo.java", 660, 850, 320, 210, TextFieldDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -28,8 +28,8 @@ final class TextFieldDemo {
                 .add(status);
 
         return DervaFX.window("DervaTextField Demo")
-                .position(960, 560)
-                .size(320, 220)
+                .position(660, 850)
+                .size(320, 210)
                 .minSize(260, 180)
                 .resizable(true, true)
                 .add(content);

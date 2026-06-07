@@ -9,7 +9,7 @@ final class GridDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaGrid", "GridDemo.java", 1020, 320, 340, 300, GridDemo::createWindow);
+        return new DemoSpec("DervaGrid", "GridDemo.java", 1020, 280, 340, 260, GridDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -29,9 +29,9 @@ final class GridDemo {
                 .add(DervaFX.button("Preview").fillWidth(), 1, 3);
 
         return DervaFX.window("DervaGrid Demo")
-                .position(1020, 320)
-                .size(340, 300)
-                .minSize(280, 220)
+                .position(1020, 280)
+                .size(340, 260)
+                .minSize(280, 200)
                 .resizable(true, true)
                 .add(grid);
     }

@@ -9,7 +9,7 @@ final class VBoxDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaVBox", "VBoxDemo.java", 320, 300, 300, 280, VBoxDemo::createWindow);
+        return new DemoSpec("DervaVBox", "VBoxDemo.java", 320, 300, 300, 240, VBoxDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -25,8 +25,8 @@ final class VBoxDemo {
 
         return DervaFX.window("DervaVBox Demo")
                 .position(320, 300)
-                .size(300, 280)
-                .minSize(240, 220)
+                .size(300, 240)
+                .minSize(240, 180)
                 .resizable(true, true)
                 .add(box);
     }

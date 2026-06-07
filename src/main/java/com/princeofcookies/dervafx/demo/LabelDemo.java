@@ -9,7 +9,7 @@ final class LabelDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaLabel", "LabelDemo.java", 320, 600, 280, 200, LabelDemo::createWindow);
+        return new DemoSpec("DervaLabel", "LabelDemo.java", 1040, 560, 280, 200, LabelDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -23,7 +23,7 @@ final class LabelDemo {
                 .add(DervaFX.label("Use them for titles, body text, and status lines."));
 
         return DervaFX.window("DervaLabel Demo")
-                .position(320, 600)
+                .position(1040, 560)
                 .size(280, 200)
                 .minSize(240, 160)
                 .resizable(true, true)

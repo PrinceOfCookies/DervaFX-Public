@@ -11,7 +11,7 @@ final class CheckBoxDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaCheckBox", "CheckBoxDemo.java", 680, 830, 320, 240, CheckBoxDemo::createWindow);
+        return new DemoSpec("DervaCheckBox", "CheckBoxDemo.java", 320, 1090, 320, 220, CheckBoxDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -31,8 +31,8 @@ final class CheckBoxDemo {
                 .add(status);
 
         return DervaFX.window("DervaCheckBox Demo")
-                .position(680, 830)
-                .size(320, 240)
+                .position(320, 1090)
+                .size(320, 220)
                 .minSize(260, 180)
                 .resizable(true, true)
                 .add(content);

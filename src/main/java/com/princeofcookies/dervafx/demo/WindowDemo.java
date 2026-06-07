@@ -9,7 +9,7 @@ final class WindowDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaWindow", "WindowDemo.java", 680, 24, 360, 280, WindowDemo::createWindow);
+        return new DemoSpec("DervaWindow", "WindowDemo.java", 680, 24, 360, 230, WindowDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -30,8 +30,8 @@ final class WindowDemo {
 
         return DervaFX.window("DervaWindow Demo")
                 .position(680, 24)
-                .size(360, 280)
-                .minSize(280, 220)
+                .size(360, 230)
+                .minSize(280, 180)
                 .resizable(true, true)
                 .add(content);
     }

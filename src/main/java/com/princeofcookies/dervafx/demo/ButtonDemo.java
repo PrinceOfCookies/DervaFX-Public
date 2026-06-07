@@ -13,7 +13,7 @@ final class ButtonDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaButton", "ButtonDemo.java", 620, 560, 320, 220, ButtonDemo::createWindow);
+        return new DemoSpec("DervaButton", "ButtonDemo.java", 320, 850, 320, 210, ButtonDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -39,8 +39,8 @@ final class ButtonDemo {
                 .add(status);
 
         return DervaFX.window("DervaButton Demo")
-                .position(620, 560)
-                .size(320, 220)
+                .position(320, 850)
+                .size(320, 210)
                 .minSize(260, 180)
                 .resizable(true, true)
                 .add(content);

@@ -10,7 +10,7 @@ final class ComboBoxDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaComboBox", "ComboBoxDemo.java", 1020, 830, 320, 240, ComboBoxDemo::createWindow);
+        return new DemoSpec("DervaComboBox", "ComboBoxDemo.java", 660, 1090, 320, 220, ComboBoxDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -33,8 +33,8 @@ final class ComboBoxDemo {
                 .add(status);
 
         return DervaFX.window("DervaComboBox Demo")
-                .position(1020, 830)
-                .size(320, 240)
+                .position(660, 1090)
+                .size(320, 220)
                 .minSize(260, 180)
                 .resizable(true, true)
                 .add(content);

@@ -31,10 +31,12 @@ public final class DemoApp extends Application {
         AnchorPane.setBottomAnchor(root.getNode(), 0.0);
         AnchorPane.setLeftAnchor(root.getNode(), 0.0);
 
-        Scene scene = new Scene(host, 1480, 900);
+        Scene scene = new Scene(host, 1480, 1620);
         DervaFX.applyTheme(scene);
 
         List<DemoSpec> specs = List.of(
+                FactoryDemo.spec(),
+                ElementDemo.spec(),
                 RootDemo.spec(),
                 WindowDemo.spec(),
                 PanelDemo.spec(),
@@ -100,7 +102,7 @@ public final class DemoApp extends Application {
 
         DervaWindow hubWindow = DervaFX.window("DervaFX Demo Menu")
                 .position(HUB_X, HUB_Y)
-                .size(280, 720)
+                .size(280, 920)
                 .minSize(240, 320)
                 .resizable(false, true)
                 .add(hubContent);

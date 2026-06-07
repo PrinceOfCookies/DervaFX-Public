@@ -11,7 +11,7 @@ final class PanelDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaPanel", "PanelDemo.java", 1060, 24, 300, 260, PanelDemo::createWindow);
+        return new DemoSpec("DervaPanel", "PanelDemo.java", 1060, 24, 300, 230, PanelDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -27,8 +27,8 @@ final class PanelDemo {
 
         return DervaFX.window("DervaPanel Demo")
                 .position(1060, 24)
-                .size(300, 260)
-                .minSize(240, 200)
+                .size(300, 230)
+                .minSize(240, 180)
                 .resizable(true, true)
                 .add(panel);
     }

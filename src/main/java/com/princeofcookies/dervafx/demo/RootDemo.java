@@ -10,7 +10,7 @@ final class RootDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaRoot", "RootDemo.java", 320, 24, 340, 250, RootDemo::createWindow);
+        return new DemoSpec("DervaRoot", "RootDemo.java", 320, 24, 340, 230, RootDemo::createWindow);
     }
 
     private static DervaWindow createWindow(DervaRoot root, javafx.scene.Scene scene) {
@@ -46,8 +46,8 @@ final class RootDemo {
 
         return DervaFX.window("DervaRoot Demo")
                 .position(320, 24)
-                .size(340, 250)
-                .minSize(280, 200)
+                .size(340, 230)
+                .minSize(280, 180)
                 .resizable(true, true)
                 .add(content);
     }

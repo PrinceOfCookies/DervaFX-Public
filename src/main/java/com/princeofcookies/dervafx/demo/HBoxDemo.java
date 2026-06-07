@@ -10,7 +10,7 @@ final class HBoxDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaHBox", "HBoxDemo.java", 640, 320, 360, 220, HBoxDemo::createWindow);
+        return new DemoSpec("DervaHBox", "HBoxDemo.java", 640, 300, 360, 220, HBoxDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -30,7 +30,7 @@ final class HBoxDemo {
                 .add(box);
 
         return DervaFX.window("DervaHBox Demo")
-                .position(640, 320)
+                .position(640, 300)
                 .size(360, 220)
                 .minSize(280, 180)
                 .resizable(true, false)

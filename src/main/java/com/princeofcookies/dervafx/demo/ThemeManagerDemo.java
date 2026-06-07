@@ -11,7 +11,7 @@ final class ThemeManagerDemo {
     }
 
     static DemoSpec spec() {
-        return new DemoSpec("DervaThemeManager", "ThemeManagerDemo.java", 700, 1110, 380, 260, ThemeManagerDemo::createWindow);
+        return new DemoSpec("DervaThemeManager", "ThemeManagerDemo.java", 320, 1340, 380, 240, ThemeManagerDemo::createWindow);
     }
 
     private static DervaWindow createWindow(com.princeofcookies.dervafx.DervaRoot root, javafx.scene.Scene scene) {
@@ -40,8 +40,8 @@ final class ThemeManagerDemo {
                 .add(status);
 
         return DervaFX.window("DervaThemeManager Demo")
-                .position(700, 1110)
-                .size(380, 260)
+                .position(320, 1340)
+                .size(380, 240)
                 .minSize(300, 200)
                 .resizable(true, true)
                 .add(content);
